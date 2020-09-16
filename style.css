@@ -1,0 +1,25 @@
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color:cyan;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+.main {
+    background-color: floralwhite;
+    width: 100vmin;
+    height: 100vmin;
+}
+.quotes {
+    background-color: black;
+    height: 40%;
+}
+.music {
+    background-color: yellow;
+    height: 45%;
+}
+iframe {
+    display: block;
+}
