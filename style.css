@@ -13,11 +13,28 @@ body {
     height: 100vmin;
 }
 .quotes {
-    background-color: black;
     height: 40%;
 }
+#content {
+    margin-top: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+#author {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+#author:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 10px;
+}
 .music {
-    background-color: yellow;
     height: 45%;
 }
 iframe {
