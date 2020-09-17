@@ -7,7 +7,7 @@ var musicList = [
     {
         name: "Let It Happen",
         src: "https://www.youtube.com/embed/pFptt7Cargc",
-        topic: [,'uninspiring','inspiring','unready','determined','hopeless','doubt']
+        topic: ['uninspiring','inspiring','unready','determined','hopeless','doubt']
     }
 ]
 export { musicList }
