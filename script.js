@@ -1,22 +1,26 @@
 import { musicList } from './music.js'
 import { quotes } from './quotes.js'
 
+
+function getTopic() {
+    
+}
 let getContent = document.getElementById('content')
 let getAuthor = document.getElementById('author')
 function getQuotes(query) {
     var result = quotes.filter(quote =>
     quote.topic.some(item => item === query)
     ).map(quote => {
-    const results = {};
-      results.quote = quote.content;
-      results.author = quote.author;
+    const results = {}
+      results.quote = quote.content
+      results.author = quote.author
     return results
     })
     var getOne = (Math.floor(Math.random() * result.length))
     getContent.innerHTML = result[getOne].quote
     getAuthor.innerHTML = result[getOne].author
 }
-getQuotes('down')
+getQuotes('failed')
 
 let getVid = document.getElementById('musicVid')
 function getMusic(query) {
