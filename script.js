@@ -3,8 +3,17 @@ import { quotes } from './quotes.js'
 
 
 function getTopic() {
+    var topics = []
+    quotes
+    .map(quote => quote.topic)
+    .forEach(topic => topic.map(
+        item => if(!topics.includes(item)) {
+          topics.push(item)
+        }))
     
+    console.log(topics);
 }
+getTopic()
 let getContent = document.getElementById('content')
 let getAuthor = document.getElementById('author')
 function getQuotes(query) {
@@ -24,13 +33,14 @@ getQuotes('failed')
 
 let getVid = document.getElementById('musicVid')
 function getMusic(query) {
-    var result = musicList.filter(music =>
-        music.topic.some(item => item === query)
-        ).map(music => {
-        const results = {};
-          results.src = music.src;
-        return results
-        })
+    var result = musicList
+                .filter(music =>
+                    music.topic.some(item => item === query))
+                .map(music => {
+                    const results = {};
+                    results.src = music.src;
+                    return results
+                })
         var getOne = (Math.floor(Math.random() * result.length))
         getVid.src = result[getOne].src
 }
