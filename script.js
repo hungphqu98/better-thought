@@ -3,17 +3,20 @@ import { quotes } from './quotes.js'
 
 
 function getTopic() {
-    var topics = []
+    let topics = []
     quotes
     .map(quote => quote.topic)
     .forEach(topic => topic.map(
-        item => if(!topics.includes(item)) {
-          topics.push(item)
-        }))
-    
-    console.log(topics);
+        item => topics.push(item)
+    ))
+    let unique = new Set(topics)
+    let uniqueTopics = [...unique]
+    for (let i = 0; i < uniqueTopics.length; i++) {
+        document.getElementById("myUL").innerHTML += '<li><a>' + uniqueTopics[i] +'</a></li>';
+    }
 }
 getTopic()
+
 let getContent = document.getElementById('content')
 let getAuthor = document.getElementById('author')
 function getQuotes(query) {
@@ -29,7 +32,6 @@ function getQuotes(query) {
     getContent.innerHTML = result[getOne].quote
     getAuthor.innerHTML = result[getOne].author
 }
-getQuotes('failed')
 
 let getVid = document.getElementById('musicVid')
 function getMusic(query) {
@@ -44,4 +46,10 @@ function getMusic(query) {
         var getOne = (Math.floor(Math.random() * result.length))
         getVid.src = result[getOne].src
 }
-getMusic('unready')
+let inputF = document.getElementById('myMood')
+inputF.onchange = function() {
+    let queryValue = inputF.value
+    document.getElementById('modal').style.display = "none"
+    getQuotes(queryValue)
+    getMusic(queryValue)
+}

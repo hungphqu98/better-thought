@@ -29,5 +29,11 @@ var musicList = [
         src: "https://www.youtube.com/embed/h_L4Rixya64",
         topic: ['down','failed','unready','determined','hopeless','lost','weak','doubt','rejected']
     },
+    {
+        name: "Eye Of The Tiger",
+        src: "https://www.youtube.com/embed/btPJPFnesV4",
+        topic: ['down','shy','unready','determined','reluctant','lost','weak','doubt','rejected']
+    },
+    
 ]
 export { musicList }

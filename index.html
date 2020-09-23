@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer type="module"></script>
 </head>
 <body>
     <div class="main">
@@ -25,6 +26,35 @@
 
         </div>
     </div>
-    <script src="script.js" defer type="module"></script>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h4>How are you feeling right now?</h4>
+            <!-- <form action="" id="myForm"> -->
+            <input type="text" id="myMood" onkeyup="searchQuery()">
+            <ul id="myUL">
+              </ul>
+            <!-- </form> -->
+        </div>
+    </div>
+    
+   <script id="myScript">
+    function searchQuery() {
+        let input, filter, ul, li, a, i, txtValue
+        input = document.getElementById('myMood')
+        let x = input.value;
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL")
+        li = ul.getElementsByTagName('li')
+        for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0]
+        txtValue = a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "block";
+        } else {
+        li[i].style.display = "";
+        }
+        }
+        }
+   </script>
 </body>
 </html>
