@@ -4,39 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer type="module"></script>
 </head>
-<body>
-    <div class="main">
-        <div class="quotes">
-            <h3>Quote for you:</h3>
+<body class="flex bg-yellow-300 justify-center items-center m-0">
+    <div class="modal block fixed top-0 left-0 w-screen h-screen z-20" id="modal">
+        <div class="modal-content relative text-center bg-white p-5 border border-solid border-gray-500">
+            <h4>How are you feeling right now?</h4>
+            <input class="mt-4 mb-4 text-xl border border-solid border-gray-400" type="text" id="myMood" onkeyup="searchQuery()">
+            <ul class="p-0 m-0 list-none" id="myUL">
+            </ul>
+        </div>
+    </div>
+    <div class="overlay fixed w-screen h-screen bg-black z-10" id="overlay"></div>
+    <div class="main bg-yellow-300 overflow-hidden" id="main">
+        <div class="pt-3 quotes">
+            <h3 class="mt-3 ml-3"><span class="border border-gray-500 rounded-lg p-3 bg-blue-500 text-white">Quote for you</span></h3>
             <div>
-                <p id="content">It is easy to sit up and take notice, What is difficult is getting up and taking action.</p>
+                <p class="mt-10 text-center px-4 text-3xl" id="content"></p>
             </div>
             <div>
-                <p id="author">Honore de Balzac</p>
+                <p class="mt-12 text-center text-2xl" id="author"></p>
             </div>
         </div>
         <div class="music">
-            <h3>Music for you: </h3>
-            <iframe id="musicVid"width="100%" height="100%" src="https://www.youtube.com/embed/04mfKJWDSzI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="mb-8 ml-3"><span class="border border-gray-500 rounded-lg p-3 bg-blue-500 text-white">Music for you</span></h3>
+            <iframe id="musicVid" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="control">
-
-        </div>
-    </div>
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <h4>How are you feeling right now?</h4>
-            <!-- <form action="" id="myForm"> -->
-            <input type="text" id="myMood" onkeyup="searchQuery()">
-            <ul id="myUL">
-              </ul>
-            <!-- </form> -->
+        <div class="mt-4 control py-10 ">
+           <p class="pt-3 text-center justify-center">My profile: <a href="https://github.com/hungphqu98"><img class="inline" src="GitHub64px.png" alt=""></a></p
         </div>
     </div>
-    
    <script id="myScript">
     function searchQuery() {
         let input, filter, ul, li, a, i, txtValue

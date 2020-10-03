@@ -12,7 +12,7 @@ var musicList = [
     {
         name: "Fix You",
         src: "https://www.youtube.com/embed/k4V3Mo61fJM",
-        topic: ['down','failed','unready','determined','hopeless','lost','weak','tired']
+        topic: ['down','failed','unready','determined','hopeless','lost','weak','tired','insecure']
     },
     {
         name: "Can't Stop",
@@ -27,7 +27,7 @@ var musicList = [
     {
         name: "Best Of You",
         src: "https://www.youtube.com/embed/h_L4Rixya64",
-        topic: ['down','failed','unready','determined','hopeless','lost','weak','doubt','rejected']
+        topic: ['down','failed','unready','determined','hopeless','lost','weak','doubt','rejected','insecure']
     },
     {
         name: "Eye Of The Tiger",

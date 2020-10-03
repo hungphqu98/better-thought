@@ -12,7 +12,7 @@ function getTopic() {
     let unique = new Set(topics)
     let uniqueTopics = [...unique]
     for (let i = 0; i < uniqueTopics.length; i++) {
-        document.getElementById("myUL").innerHTML += '<li><a>' + uniqueTopics[i] +'</a></li>';
+        document.getElementById("myUL").innerHTML += '<li><a>' + uniqueTopics[i] +'</a></li>'
     }
 }
 getTopic()
@@ -39,8 +39,8 @@ function getMusic(query) {
                 .filter(music =>
                     music.topic.some(item => item === query))
                 .map(music => {
-                    const results = {};
-                    results.src = music.src;
+                    const results = {}
+                    results.src = music.src
                     return results
                 })
         var getOne = (Math.floor(Math.random() * result.length))
@@ -50,6 +50,7 @@ let inputF = document.getElementById('myMood')
 inputF.onchange = function() {
     let queryValue = inputF.value
     document.getElementById('modal').style.display = "none"
+    document.getElementById('overlay').style.display = "none"
     getQuotes(queryValue)
     getMusic(queryValue)
 }
